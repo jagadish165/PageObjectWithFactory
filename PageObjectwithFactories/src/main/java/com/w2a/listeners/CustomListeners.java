@@ -14,7 +14,9 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.Markup;
 import com.w2a.base.Page;
 import com.w2a.utilities.MonitoringMail;
 import com.w2a.utilities.TestConfig;
@@ -30,7 +32,7 @@ public class CustomListeners extends Page implements ITestListener,ISuiteListene
 
 	public void onStart(ITestContext arg0) {
 		// TODO Auto-generated method stub
-		
+		System.out.println();
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
@@ -47,8 +49,8 @@ public class CustomListeners extends Page implements ITestListener,ISuiteListene
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		test.log(LogStatus.FAIL, arg0.getName().toUpperCase()+" Failed with exception : "+arg0.getThrowable());
-		test.log(LogStatus.INFO, test.addScreenCapture(Utilities.screenshotName));
+		test.log(Status.FAIL, arg0.getTestClass().getRealClass().toString().toUpperCase()+" Failed with exception : "+arg0.getThrowable());
+		test.fail(MediaEntityBuilder.createScreenCaptureFromPath(Utilities.screenshotName).build());
 		
 		
 		
@@ -57,33 +59,33 @@ public class CustomListeners extends Page implements ITestListener,ISuiteListene
 		Reporter.log("<br>");
 		Reporter.log("<br>");
 		Reporter.log("<a target=\"_blank\" href="+Utilities.screenshotName+"><img src="+Utilities.screenshotName+" height=200 width=200></img></a>");
-		rep.endTest(test);
-		rep.flush();
+		//rep.removeTest(test);
+		rep.extent.flush();
 		
 	}
 
 	public void onTestSkipped(ITestResult arg0) {
 
 
-		test.log(LogStatus.SKIP, arg0.getName().toUpperCase()+" Skipped the test as the Run mode is NO");
-		rep.endTest(test);
-		rep.flush();
+		test.log(Status.SKIP, arg0.getName().toUpperCase()+" Skipped the test as the Run mode is NO");
+	//	rep.extent.removeTest(test);
+		rep.extent.flush();
 		
 	}
 
 
 	public void onTestStart(ITestResult arg0) {
-
-		test = rep.startTest(arg0.getName().toUpperCase());
+        
+		test = rep.extent.createTest(arg0.getName().toUpperCase());
 	
 	}
 
 	public void onTestSuccess(ITestResult arg0) {
 
 
-		test.log(LogStatus.PASS, arg0.getName().toUpperCase()+" PASS");
-		rep.endTest(test);
-		rep.flush();
+		test.log(Status.PASS, arg0.getName().toUpperCase()+" PASS");
+		//rep.removeTest(test);
+		rep.extent.flush();
 		
 	}
 

@@ -7,12 +7,22 @@
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
   </listeners>
+  <test name="Sign in Test(failed)">
+    <classes>
+      <class name="com.w2a.testcases.SignInTest">
+        <methods>
+          <include name="signInTest" invocation-numbers="0 1"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.w2a.testcases.SignInTest -->
+    </classes>
+  </test> <!-- Sign in Test(failed) -->
   <test name="Flight Search Test(failed)">
     <classes>
       <class name="com.w2a.testcases.FlightSearchTest">
         <methods>
           <include name="tearDown"/>
-          <include name="flightSearchTest"/>
+          <include name="flightSearchTest" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.w2a.testcases.FlightSearchTest -->

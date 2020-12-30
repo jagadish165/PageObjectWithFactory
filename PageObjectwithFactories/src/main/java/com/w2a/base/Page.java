@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,9 +12,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.w2a.pages.actions.TopNavigation;
 import com.w2a.utilities.ExcelReader;
 import com.w2a.utilities.ExtentManager;
@@ -38,7 +37,7 @@ public class Page {
 	public static ExcelReader excel = new ExcelReader(
 			System.getProperty("user.dir") + "\\src\\test\\resources\\excel\\testdata.xlsx");
 	public static WebDriverWait wait;
-	public ExtentReports rep = ExtentManager.getInstance();
+	public ExtentManager rep = new ExtentManager();
 	public static ExtentTest test;
 	public static String browser;
 	public static TopNavigation topNav;
@@ -88,7 +87,7 @@ public class Page {
 
 		element.click();
 		log.debug("Clicking on an Element : "+element);
-		test.log(LogStatus.INFO, "Clicking on : " + element);
+		test.log(Status.INFO, "Clicking on : " + element);
 	}
 	
 	
@@ -98,7 +97,7 @@ public class Page {
 
 		log.debug("Typing in an Element : "+element+" entered value as : "+value);
 		
-		test.log(LogStatus.INFO, "Typing in : " + element + " entered value as " + value);
+		test.log(Status.INFO, "Typing in : " + element + " entered value as " + value);
 
 	}
 	

@@ -2,33 +2,31 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.w2a</groupId>
   <artifactId>PageObjectwithFactories</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <dependencies>
-  
+  <version>0.0.1-SNAPSHOT</version>  
+  <dependencies>  
     	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.11</version>
-		</dependency>
-
-
-
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		</dependency>		
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>2.53.1</version>
+			<version>3.141.59</version>
 		</dependency>
-
-
-		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
-		<dependency>
-			<groupId>com.relevantcodes</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>2.41.2</version>
-		</dependency>
+	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.0.6</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.8.0</version>
+</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
 		<dependency>
@@ -131,7 +129,14 @@
 
 
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
 
 		</plugins>
 		

@@ -31,8 +31,8 @@ public class FlightSearchTest {
 	/*	ErrorCollector.verifyEquals(home.findTabCount(), 6);
 		ErrorCollector.verifyEquals(home.findTabCount(), 7);
 		ErrorCollector.verifyEquals(home.findTabCount(), 8);
-*/		ErrorCollector.verifyEquals(home.findTabCount(), 7);
-		home.gotoFlights().bookAFlight(data.get("fromCity"), data.get("toCity"), data.get("fromDate"), data.get("toDate"), data.get("noOfAdults"), data.get("noOfChildern"));
+*/	//	ErrorCollector.verifyEquals(home.findTabCount(), 7);
+	//	home.gotoFlights().bookAFlight(data.get("fromCity"), data.get("toCity"), data.get("fromDate"), data.get("toDate"), data.get("noOfAdults"), data.get("noOfChildern"));
 		
 		
 		

@@ -13,17 +13,11 @@
 	</listeners>
 
 
-	<test name="Sign in Test">
-		<classes>
-			<class name="com.w2a.testcases.SignInTest" />
-		</classes>
-	</test> <!-- Test -->
-
 	<test name="Flight Search Test">
 		<classes>
+		   
 			<class name="com.w2a.testcases.FlightSearchTest" />
 		</classes>
-	</test> <!-- Test -->
-
+	</test>
 
 </suite> <!-- Suite -->

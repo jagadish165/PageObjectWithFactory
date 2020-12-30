@@ -2,25 +2,33 @@ package com.w2a.utilities;
 
 import java.io.File;
 
-import com.relevantcodes.extentreports.DisplayOrder;
-import com.relevantcodes.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+
 
 public class ExtentManager {
 	
-	private static ExtentReports extent;
+	public static ExtentReports extent;
 	
 	
-	public static ExtentReports getInstance(){
+	  public ExtentManager (){
 		
 		if(extent==null){
+			 extent = new ExtentReports();
+			ExtentSparkReporter html = new ExtentSparkReporter(System.getProperty("user.dir")+"\\target\\surefire-reports\\html\\extent.html");
+			// ExtentXReporter extentx = new ExtentXReporter(ystem.getProperty("user.dir")+"\\src\\test\\resources\\extentconfig\\ReportsConfig.xml");
+			 
 			
+			 extent.attachReporter(html);
+
 			
-			extent = new ExtentReports(System.getProperty("user.dir")+"\\target\\surefire-reports\\html\\extent.html",true,DisplayOrder.OLDEST_FIRST);
-			extent.loadConfig(new File(System.getProperty("user.dir")+"\\src\\test\\resources\\extentconfig\\ReportsConfig.xml"));
+			//extent = new ExtentReports();
+			//extent.loadConfig(new File(S));
 			
 		}
 		
-		return extent;
+		
 		
 	}
 
