@@ -14,13 +14,13 @@ import com.w2a.utilities.Utilities;
 
 public class FlightSearchTest {
 	
-	@BeforeTest(enabled = false)
+	@BeforeTest(enabled = true)
 	public void setUp(){
 		
 		Page.initConfiguration();
 	}
 	
-	@Test(enabled = false,dataProviderClass=Utilities.class,dataProvider="dp")
+	@Test(enabled = true,dataProviderClass=Utilities.class,dataProvider="dp")
 	public void flightSearchTest(Hashtable<String,String> data) {
 		
 		
@@ -32,7 +32,7 @@ public class FlightSearchTest {
 		ErrorCollector.verifyEquals(home.findTabCount(), 7);
 		ErrorCollector.verifyEquals(home.findTabCount(), 8);
 */	//	ErrorCollector.verifyEquals(home.findTabCount(), 7);
-	//	home.gotoFlights().bookAFlight(data.get("fromCity"), data.get("toCity"), data.get("fromDate"), data.get("toDate"), data.get("noOfAdults"), data.get("noOfChildern"));
+		home.gotoFlights().bookAFlight(data.get("fromCity"), data.get("toCity"), data.get("fromDate"), data.get("toDate"), data.get("noOfAdults"), data.get("noOfChildern"));
 		
 		
 		
