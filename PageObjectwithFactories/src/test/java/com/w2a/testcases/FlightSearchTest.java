@@ -14,13 +14,13 @@ import com.w2a.utilities.Utilities;
 
 public class FlightSearchTest {
 	
-	@BeforeTest
+	@BeforeTest(enabled = false)
 	public void setUp(){
 		
 		Page.initConfiguration();
 	}
 	
-	@Test(dataProviderClass=Utilities.class,dataProvider="dp")
+	@Test(enabled = false,dataProviderClass=Utilities.class,dataProvider="dp")
 	public void flightSearchTest(Hashtable<String,String> data) {
 		
 		

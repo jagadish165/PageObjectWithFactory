@@ -8,11 +8,11 @@ public class TopNavigationLocators {
 
 	
 	
-	@FindBy(css="#header-account-menu")
-	public WebElement account;
+	@FindBy(css="div.heading-container>div>a")
+	public WebElement signInButtonBig;
 	@FindAll({
-		@FindBy(css="#header-account-signin-button"),
-		@FindBy(xpath = "//*[contains(text(),'Sign In')]")
+		@FindBy(css="#gc-custom-header-nav-bar-acct-menu > button > div"),
+		
 	})
 	public WebElement signinBtn;
 	

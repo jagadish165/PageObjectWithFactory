@@ -1,0 +1,4 @@
+20:02:04,380 DEBUG devpinoyLogger:68 - Launching Chrome
+20:02:16,088 DEBUG devpinoyLogger:107 - Waiting for in an Element : By.cssSelector: #gc-custom-header-nav-bar-acct-menu > button
+20:02:20,631 DEBUG devpinoyLogger:68 - Launching Chrome
+20:02:31,966 DEBUG devpinoyLogger:107 - Waiting for in an Element : By.cssSelector: #gc-custom-header-nav-bar-acct-menu > button
